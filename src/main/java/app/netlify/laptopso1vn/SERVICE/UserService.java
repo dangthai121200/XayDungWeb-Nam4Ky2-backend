@@ -18,6 +18,7 @@ public class UserService {
 		userDao = new UserDao();
 	}
 	
+	
 	public UserModel getUserLogin(FormLogin formLogin) {
 		UserEntity userEntity = userDao.getUserLogin(formLogin);
 		UserModel userModel = new UserModel(userEntity);
