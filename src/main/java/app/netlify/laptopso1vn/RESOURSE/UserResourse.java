@@ -5,6 +5,7 @@ import java.util.List;
 import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.MODEL.UserModel;
 import app.netlify.laptopso1vn.SERVICE.UserService;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -27,13 +28,13 @@ public class UserResourse {
 		List<UserModel> userModelList = userService.getUsers();
 		return userModelList;
 	}
-//	
-//	@POST
-//	@Consumes(MediaType.APPLICATION_JSON)
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public UserModel getUser(FormLogin formLogin) {
-//		UserModel userModel = userService.getUserLogin(formLogin);
-//		return userModel;
-//		
-//	}
+	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public UserModel getUser(@Valid  FormLogin  formLogin) {
+		UserModel userModel = userService.getUserLogin(formLogin);
+		return userModel;
+		
+	}
 }
