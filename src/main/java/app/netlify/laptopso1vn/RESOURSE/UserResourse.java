@@ -3,6 +3,7 @@ package app.netlify.laptopso1vn.RESOURSE;
 import java.util.List;
 
 import app.netlify.laptopso1vn.FORM.FormLogin;
+import app.netlify.laptopso1vn.FORM.FormRegister;
 import app.netlify.laptopso1vn.MODEL.UserModel;
 import app.netlify.laptopso1vn.SERVICE.UserService;
 import jakarta.validation.Valid;
@@ -37,4 +38,16 @@ public class UserResourse {
 		return userModel;
 		
 	}
+	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	
+	public void postUser(@Valid  FormRegister formRegister) {
+		userService.postUserRegister(formRegister);
+	}
+	
+	
+	
+	
 }

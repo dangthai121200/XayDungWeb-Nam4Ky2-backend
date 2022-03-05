@@ -1,13 +1,17 @@
 package app.netlify.laptopso1vn.FORM;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class FormLogin {
 	
 	@Size(max = 6)
 	@NotEmpty
+	@NotNull
 	private String username;
+	@Size(max = 6)
+	@NotNull
 	private String password;
 	
 	
