@@ -25,7 +25,6 @@ public class UserResourse {
 	}
 	
 	@GET
-	
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<UserModel> getUsers() {
 		List<UserModel> userModelList = userService.getUsers();

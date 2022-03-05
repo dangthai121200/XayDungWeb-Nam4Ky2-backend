@@ -11,12 +11,17 @@ import javax.persistence.Table;
 
 @Entity(name = "UserEntity")
 @Table(name = "khachhang")
-public class UserEntity implements Serializable {
+public class KhachHangEntity implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "makh")
-	private int makh;
+	private int maKh;
 	
 	@Column(name = "ho")
 	private String ho;
@@ -25,7 +30,7 @@ public class UserEntity implements Serializable {
 	private String ten;
 	
 	@Column(name = "diachi")
-	private String diachi;
+	private String diaChi;
 	
 	@Column(name = "email")
 	private String email;
@@ -39,11 +44,11 @@ public class UserEntity implements Serializable {
 	@Column(name = "sdt")
 	private String sdt;
 	
-	public UserEntity() {
+	public KhachHangEntity() {
 
 	}
 	
-	public UserEntity(String email, String username, String password) {
+	public KhachHangEntity(String email, String username, String password) {
 		super();
 		this.email = email;
 		this.username = username;
@@ -52,7 +57,7 @@ public class UserEntity implements Serializable {
 
 
 
-	public UserEntity(int makh, 
+	public KhachHangEntity(int makh, 
 			String ho, 
 			String ten, 
 			String diachi, 
@@ -60,17 +65,17 @@ public class UserEntity implements Serializable {
 			String username, 
 			String password,
 			String sdt) {
-		this.makh = makh;
+		this.maKh = makh;
 		this.ho = ho;
 		this.ten = ten;
-		this.diachi = diachi;
+		this.diaChi = diachi;
 		this.email = email;
 		this.username = username;
 		this.password = password;
 		this.sdt = sdt;
 	}
 
-	public UserEntity(String ho, 
+	public KhachHangEntity(String ho, 
 			String ten, 
 			String diachi, 
 			String email, 
@@ -79,7 +84,7 @@ public class UserEntity implements Serializable {
 			String sdt) {
 		this.ho = ho;
 		this.ten = ten;
-		this.diachi = diachi;
+		this.diaChi = diachi;
 		this.email = email;
 		this.username = username;
 		this.password = password;
@@ -87,11 +92,11 @@ public class UserEntity implements Serializable {
 	}
 
 	public int getMakh() {
-		return makh;
+		return maKh;
 	}
 
 	public void setMakh(int makh) {
-		this.makh = makh;
+		this.maKh = makh;
 	}
 
 	public String getHo() {
@@ -111,11 +116,11 @@ public class UserEntity implements Serializable {
 	}
 
 	public String getDiachi() {
-		return diachi;
+		return diaChi;
 	}
 
 	public void setDiachi(String diachi) {
-		this.diachi = diachi;
+		this.diaChi = diachi;
 	}
 
 	public String getEmail() {
@@ -152,7 +157,7 @@ public class UserEntity implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserEntity [makh=" + makh + ", ho=" + ho + ", ten=" + ten + ", diachi=" + diachi + ", email=" + email
+		return "UserEntity [makh=" + maKh + ", ho=" + ho + ", ten=" + ten + ", diachi=" + diaChi + ", email=" + email
 				+ ", username=" + username + ", password=" + password + ", sdt=" + sdt + "]";
 	}
 	

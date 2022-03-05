@@ -1,11 +1,7 @@
 package app.netlify.laptopso1vn.MODEL;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-import app.netlify.laptopso1vn.ENTITY.UserEntity;
+import app.netlify.laptopso1vn.ENTITY.KhachHangEntity;
 
 public class UserModel {
 
@@ -17,7 +13,7 @@ public class UserModel {
 	private String email;
 	private String sdt;
 	
-	public UserModel(UserEntity userEntity) {
+	public UserModel(KhachHangEntity userEntity) {
 		this.makh = userEntity.getMakh();
 		this.ho = userEntity.getHo();
 		this.ten = userEntity.getTen();

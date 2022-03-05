@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 
 import app.netlify.laptopso1vn.DAO.UserDao;
-import app.netlify.laptopso1vn.ENTITY.UserEntity;
+import app.netlify.laptopso1vn.ENTITY.KhachHangEntity;
 import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.FORM.FormRegister;
 import app.netlify.laptopso1vn.MODEL.UserModel;
@@ -21,9 +21,9 @@ public class UserService {
 	}
 	
 	public List<UserModel> getUsers() {
-		List<UserEntity> userEntitieList = userDao.getUsers();
+		List<KhachHangEntity> userEntitieList = userDao.getUsers();
 		List<UserModel> userModelList = new ArrayList<UserModel>();
-		for (UserEntity userEntity : userEntitieList) {
+		for (KhachHangEntity userEntity : userEntitieList) {
 			UserModel userModel = new UserModel(userEntity);
 			userModelList.add(userModel);
 		}
@@ -31,7 +31,7 @@ public class UserService {
 	}
 	
 	public UserModel getUserLogin(FormLogin formLogin) {
-		UserEntity userEntity = userDao.getUserLogin(formLogin);
+		KhachHangEntity userEntity = userDao.getUserLogin(formLogin);
 		UserModel userModel = new UserModel(userEntity);
 		return userModel;
 	}
