@@ -1,10 +1,24 @@
 package app.netlify.laptopso1vn.FORM;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
 public class FormRegister {
 	
+	
+	@Email
+	@NotNull
+	@NotEmpty
 	private String email;
+	@NotNull
+	@NotEmpty
 	private String username;
+	@NotNull
+	@NotEmpty
 	private String password;
+	@NotNull
+	@NotEmpty
 	private String confiPassword;
 	
 	public FormRegister() {
