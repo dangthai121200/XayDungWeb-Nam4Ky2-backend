@@ -2,9 +2,9 @@ package app.netlify.laptopso1vn.EXCEPTION;
 
 
 
-// lỗi password đăng ký khác nhau
-public class PasswordException extends Exception {
-
+//Lỗi tồn tại email
+public class ExistEmailException extends Exception {
+	
 	/**
 	 * 
 	 */
@@ -12,10 +12,7 @@ public class PasswordException extends Exception {
 
 	@Override
 	public String getMessage() {
-		return "Password is different";
+		return "Email is exits";
 	}
-	
-	
-	
 
 }

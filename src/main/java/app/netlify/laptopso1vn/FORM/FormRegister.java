@@ -1,8 +1,10 @@
 package app.netlify.laptopso1vn.FORM;
 
+import app.netlify.laptopso1vn.UTIL.Laptopso1vnUtil;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 public class FormRegister {
 	
@@ -11,12 +13,17 @@ public class FormRegister {
 	@NotNull
 	@NotEmpty
 	private String email;
+	
 	@NotNull
 	@NotEmpty
+	@Pattern(regexp = Laptopso1vnUtil.REGEX_USERNAME, message = Laptopso1vnUtil.MESSAGE_USERNAME_ERROR)
 	private String username;
+	
 	@NotNull
 	@NotEmpty
+	@Pattern(regexp = Laptopso1vnUtil.REGEX_PASSWORD ,message = Laptopso1vnUtil.MESSAGE_PASSWORD_ERROR)
 	private String password;
+	
 	@NotNull
 	@NotEmpty
 	private String confiPassword;

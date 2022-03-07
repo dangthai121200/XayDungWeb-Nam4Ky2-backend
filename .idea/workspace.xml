@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="673bec78-caa8-4cc5-b8fc-ed4235ddb0d1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/DAO/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/DAO/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/ENTITY/DotKhuyenMaiEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/ENTITY/DotKhuyenMaiEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/EXCEPTION/ExceptionPasswordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/EXCEPTION/PasswordExceptionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/EXCEPTION/NoResultExceptionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/EXCEPTION/NoResultExceptionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/FORM/FormLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/FORM/FormLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/RESOURSE/OrderRecourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/RESOURSE/OrderRecourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/RESOURSE/UserResourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/RESOURSE/UserResourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/SERVICE/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/netlify/laptopso1vn/SERVICE/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/app.netlify/laptopso1vn/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/app.netlify/laptopso1vn/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/DAO/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/DAO/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/ENTITY/DotKhuyenMaiEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/ENTITY/DotKhuyenMaiEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/EXCEPTION/ExceptionPasswordMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/EXCEPTION/NoResultExceptionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/EXCEPTION/NoResultExceptionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/FORM/FormLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/FORM/FormLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/RESOURSE/OrderRecourse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/RESOURSE/OrderRecourse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/RESOURSE/UserResourse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/RESOURSE/UserResourse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/SERVICE/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/netlify/laptopso1vn/SERVICE/UserService.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="263kK7nmZ78eiD1cH6ZItWpCPaI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="673bec78-caa8-4cc5-b8fc-ed4235ddb0d1" name="Changes" comment="" />
+      <created>1646659595477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646659595477</updated>
+    </task>
+    <servers />
+  </component>
+</project>

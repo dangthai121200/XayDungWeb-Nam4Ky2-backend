@@ -2,6 +2,8 @@ package app.netlify.laptopso1vn.RESOURSE;
 
 import java.util.List;
 
+import app.netlify.laptopso1vn.EXCEPTION.ExistEmailException;
+import app.netlify.laptopso1vn.EXCEPTION.ExistUsernameException;
 import app.netlify.laptopso1vn.EXCEPTION.PasswordException;
 import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.FORM.FormRegister;
@@ -12,11 +14,12 @@ import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 
-@Path("/users")
+@Path("v1/users")
 public class UserResourse {
 	
 	private UserService userService;
@@ -36,7 +39,7 @@ public class UserResourse {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public UserModel getUser(@Valid  FormLogin  formLogin) {
-		UserModel userModel = userService.getUserLogin(formLogin);
+		UserModel userModel = userService.getUserFromLogin(formLogin);
 		return userModel;
 		
 	}
@@ -45,12 +48,25 @@ public class UserResourse {
 	@Path("/register")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public void postUser(@Valid  FormRegister formRegister) throws Exception {
-		if(formRegister.getPassword().equals(formRegister.getConfiPassword())==false) {
-			throw new PasswordException();
-		}else {
-			userService.postUserRegister(formRegister);
-		}	
+	public UserModel postUser(@Valid  FormRegister formRegister) throws ExistEmailException, ExistUsernameException, PasswordException {
+		UserModel userModel = userService.postUserRegister(formRegister);
+		return userModel;
+	}
+	
+	@GET
+	@Path("checkUsername/{username}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public boolean checkExistByUsername(@PathParam(value = "username") String username) {
+		boolean flagUsername = userService.checkExistByUsername(username);
+		return flagUsername;
+	}
+	
+	@GET
+	@Path("checkEmail/{email}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public boolean checkExistByEmail(@PathParam(value = "email") String email) {
+		boolean flagEmail = userService.checkExistByEmail(email);
+		return flagEmail;
 	}
 	
 	

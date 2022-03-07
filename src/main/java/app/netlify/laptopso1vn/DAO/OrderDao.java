@@ -10,12 +10,15 @@ import app.netlify.laptopso1vn.ENTITY.DonHangEntity;
 import app.netlify.laptopso1vn.ENTITY.KhachHangEntity;
 import app.netlify.laptopso1vn.UTIL.HibernateUtil;
 
+
+
 public class OrderDao {
 	
 private SessionFactory sessionFactory ;
 	
 	public OrderDao() {
-		sessionFactory =  HibernateUtil.configuration
+		sessionFactory =  new Configuration()
+				.configure("hibernate.cfg.xml")
 				.addAnnotatedClass(DonHangEntity.class)
 				.buildSessionFactory();
 	}

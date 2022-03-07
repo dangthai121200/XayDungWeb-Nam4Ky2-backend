@@ -1,17 +1,23 @@
 package app.netlify.laptopso1vn.FORM;
 
+import app.netlify.laptopso1vn.UTIL.Laptopso1vnUtil;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class FormLogin {
 	
-	@Size(max = 6)
-	@NotEmpty
-	@NotNull
+
+	@Pattern(regexp = Laptopso1vnUtil.REGEX_USERNAME, message = Laptopso1vnUtil.MESSAGE_USERNAME_ERROR)
+	@NotEmpty(message = Laptopso1vnUtil.MESSAGE_NOT_EMPTY)
+	@NotNull(message = Laptopso1vnUtil.MESSAGE_NOT_NULL)
 	private String username;
-	@Size(max = 6)
-	@NotNull
+	
+	
+	@Pattern(regexp = Laptopso1vnUtil.REGEX_PASSWORD ,message = Laptopso1vnUtil.MESSAGE_PASSWORD_ERROR)
+	@NotEmpty(message = Laptopso1vnUtil.MESSAGE_NOT_EMPTY)
+	@NotNull(message = Laptopso1vnUtil.MESSAGE_NOT_NULL)
 	private String password;
 	
 	
