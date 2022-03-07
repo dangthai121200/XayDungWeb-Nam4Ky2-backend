@@ -9,13 +9,13 @@ import jakarta.validation.constraints.Size;
 public class FormLogin {
 	
 
-	@Pattern(regexp = Laptopso1vnUtil.REGEX_USERNAME, message = Laptopso1vnUtil.MESSAGE_USERNAME_ERROR)
+	//@Pattern(regexp = Laptopso1vnUtil.REGEX_USERNAME, message = Laptopso1vnUtil.MESSAGE_USERNAME_ERROR)
 	@NotEmpty(message = Laptopso1vnUtil.MESSAGE_NOT_EMPTY)
 	@NotNull(message = Laptopso1vnUtil.MESSAGE_NOT_NULL)
 	private String username;
 	
 	
-	@Pattern(regexp = Laptopso1vnUtil.REGEX_PASSWORD ,message = Laptopso1vnUtil.MESSAGE_PASSWORD_ERROR)
+	//@Pattern(regexp = Laptopso1vnUtil.REGEX_PASSWORD ,message = Laptopso1vnUtil.MESSAGE_PASSWORD_ERROR)
 	@NotEmpty(message = Laptopso1vnUtil.MESSAGE_NOT_EMPTY)
 	@NotNull(message = Laptopso1vnUtil.MESSAGE_NOT_NULL)
 	private String password;
