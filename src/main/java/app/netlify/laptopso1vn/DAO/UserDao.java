@@ -3,20 +3,16 @@ package app.netlify.laptopso1vn.DAO;
 import java.util.List;
 
 import javax.persistence.NoResultException;
-import javax.persistence.Query;
-import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.exception.ConstraintViolationException;
 
 import app.netlify.laptopso1vn.ENTITY.KhachHangEntity;
-import app.netlify.laptopso1vn.EXCEPTION.ConstraintViolationExceptionMapper;
 import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.FORM.FormRegister;
 import jakarta.validation.Valid;
-import javassist.expr.NewArray;
+
 
 
 public class UserDao {
@@ -32,15 +28,20 @@ public class UserDao {
 
 
 	public KhachHangEntity getUserFromLogin(FormLogin formLogin) {
-		Session session = sessionFactory.getCurrentSession();
-		if(session.getTransaction().isActive() == false) {
-			session.beginTransaction();
+		KhachHangEntity khachHangEntity = null;
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			if(session.getTransaction().isActive() == false) {
+				session.beginTransaction();
+			}
+			String SQL = "FROM UserEntity WHERE username = '" + formLogin.getUsername() + "'" + " AND password = '" 
+			+ formLogin.getPassword() +"'";
+			khachHangEntity  = session.createQuery(SQL, KhachHangEntity.class)
+					.getSingleResult();
+			return khachHangEntity;
+		} catch (NoResultException e) {
+			return null;
 		}
-		String SQL = "FROM UserEntity WHERE username = '" + formLogin.getUsername() + "'" + " AND password = '" 
-		+ formLogin.getPassword() +"'";
-		KhachHangEntity userEntity = session.createQuery(SQL, KhachHangEntity.class)
-				.getSingleResult();
-		return userEntity;
 	}
 
 

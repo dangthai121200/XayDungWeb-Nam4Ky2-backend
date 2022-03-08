@@ -8,6 +8,7 @@ import app.netlify.laptopso1vn.DAO.UserDao;
 import app.netlify.laptopso1vn.ENTITY.KhachHangEntity;
 import app.netlify.laptopso1vn.EXCEPTION.ExistEmailException;
 import app.netlify.laptopso1vn.EXCEPTION.ExistUsernameException;
+import app.netlify.laptopso1vn.EXCEPTION.LoginException;
 import app.netlify.laptopso1vn.EXCEPTION.PasswordException;
 import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.FORM.FormRegister;
@@ -34,10 +35,14 @@ public class UserService {
 		return userModelList;
 	}
 	
-	public UserModel getUserFromLogin(FormLogin formLogin) {
+	public UserModel getUserFromLogin(FormLogin formLogin) throws LoginException {
 		KhachHangEntity userEntity = userDao.getUserFromLogin(formLogin);
-		UserModel userModel = new UserModel(userEntity);
-		return userModel;
+		if(userEntity != null) {
+			UserModel userModel = new UserModel(userEntity);
+			return userModel;
+		}else {
+			throw new LoginException();
+		}
 	}
 
 

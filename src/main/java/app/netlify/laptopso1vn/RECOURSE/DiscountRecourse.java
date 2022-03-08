@@ -1,4 +1,4 @@
-package app.netlify.laptopso1vn.RESOURSE;
+package app.netlify.laptopso1vn.RECOURSE;
 
 import jakarta.ws.rs.Path;
 

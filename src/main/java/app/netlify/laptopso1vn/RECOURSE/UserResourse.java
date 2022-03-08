@@ -1,9 +1,10 @@
-package app.netlify.laptopso1vn.RESOURSE;
+package app.netlify.laptopso1vn.RECOURSE;
 
 import java.util.List;
 
 import app.netlify.laptopso1vn.EXCEPTION.ExistEmailException;
 import app.netlify.laptopso1vn.EXCEPTION.ExistUsernameException;
+import app.netlify.laptopso1vn.EXCEPTION.LoginException;
 import app.netlify.laptopso1vn.EXCEPTION.PasswordException;
 import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.FORM.FormRegister;
@@ -38,7 +39,7 @@ public class UserResourse {
 	@Path("/login")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public UserModel getUser(@Valid  FormLogin  formLogin) {
+	public UserModel getUser(@Valid  FormLogin  formLogin) throws LoginException {
 		UserModel userModel = userService.getUserFromLogin(formLogin);
 		return userModel;
 		

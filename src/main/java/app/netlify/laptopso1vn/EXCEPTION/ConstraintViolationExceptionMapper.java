@@ -20,6 +20,4 @@ public class ConstraintViolationExceptionMapper implements ExceptionMapper<Const
 				.type(MediaType.APPLICATION_JSON)
 				.build();
 	}
-
-
 }
