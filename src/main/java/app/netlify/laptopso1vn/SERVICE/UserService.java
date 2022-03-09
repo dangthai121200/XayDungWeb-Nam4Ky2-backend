@@ -14,7 +14,7 @@ import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.FORM.FormRegister;
 import app.netlify.laptopso1vn.MODEL.UserModel;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
 
 public class UserService {

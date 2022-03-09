@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 import app.netlify.laptopso1vn.ENTITY.KhachHangEntity;
 import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.FORM.FormRegister;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
 
 

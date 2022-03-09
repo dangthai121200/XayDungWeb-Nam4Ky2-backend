@@ -1,9 +1,10 @@
 package app.netlify.laptopso1vn;
 
+import javax.ws.rs.ext.Provider;
+
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 
-import jakarta.ws.rs.ext.Provider;
 
 
 @Provider

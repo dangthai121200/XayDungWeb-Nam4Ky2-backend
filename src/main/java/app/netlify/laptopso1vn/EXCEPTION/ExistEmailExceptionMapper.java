@@ -1,8 +1,8 @@
 package app.netlify.laptopso1vn.EXCEPTION;
 
-import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.ext.ExceptionMapper;
-import jakarta.ws.rs.ext.Provider;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
 
 //xử lý lỗi Lỗi tồn tại email
 @Provider
