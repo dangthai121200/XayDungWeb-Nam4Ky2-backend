@@ -1,23 +1,33 @@
 package app.netlify.laptopso1vn.ENTITY;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.AttributeConverter;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Converter;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import app.netlify.laptopso1vn.ENUM.CategoryProduct;
 
 @Table(name = "laptop")
 @Entity(name = "LaptopEntity")
-public class LaptopEntity {
+public class LaptopEntity implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "masp")
@@ -63,8 +73,10 @@ public class LaptopEntity {
 	@Column(name = "cpu")
 	private String cpu;
 	
+	@ManyToOne
+	@JoinColumn(name = "maloaimay", table = "laptop")
+	private LoaiMayEntity loaiMayEntity;
 	
-
 	public LaptopEntity() {
 	}
 
@@ -86,6 +98,31 @@ public class LaptopEntity {
 		this.vga = vga;
 		this.ram = ram;
 		this.cpu = cpu;
+	}
+	
+	public LaptopEntity(String tenSp, String moTa, int soLuong, String hinh, BigDecimal gia, CategoryProduct loaiSp,
+			String tinhTrang, String trongLuong, String manHinh, String oCung, String vga, String ram, String cpu) {
+		this.tenSp = tenSp;
+		this.moTa = moTa;
+		this.soLuong = soLuong;
+		this.hinh = hinh;
+		this.gia = gia;
+		this.loaiSp = loaiSp;
+		this.tinhTrang = tinhTrang;
+		this.trongLuong = trongLuong;
+		this.manHinh = manHinh;
+		this.oCung = oCung;
+		this.vga = vga;
+		this.ram = ram;
+		this.cpu = cpu;
+	}
+
+	public LoaiMayEntity getLoaiMayEntity() {
+		return loaiMayEntity;
+	}
+
+	public void setLoaiMayEntity(LoaiMayEntity loaiMayEntity) {
+		this.loaiMayEntity = loaiMayEntity;
 	}
 
 	public int getMaSp() {
@@ -206,12 +243,11 @@ public class LaptopEntity {
 		return "LaptopEntity [maSp=" + maSp + ", tenSp=" + tenSp + ", moTa=" + moTa + ", soLuong=" + soLuong + ", hinh="
 				+ hinh + ", gia=" + gia + ", loaiSp=" + loaiSp + ", tinhTrang=" + tinhTrang + ", trongLuong="
 				+ trongLuong + ", manHinh=" + manHinh + ", oCung=" + oCung + ", vga=" + vga + ", ram=" + ram + ", cpu="
-				+ cpu + "]";
+				+ cpu + ", loaiMayEntity=" + loaiMayEntity.getTenLoai() + "]";
 	}
+
 	
-	
-	
-	
+
 }
 
 @Converter

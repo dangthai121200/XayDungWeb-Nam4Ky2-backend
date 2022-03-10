@@ -1,6 +1,7 @@
 package app.netlify.laptopso1vn.MODEL;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 import app.netlify.laptopso1vn.ENTITY.LaptopEntity;
 import app.netlify.laptopso1vn.ENUM.CategoryProduct;
@@ -22,6 +23,7 @@ public class LaptopModel {
 	private String vga;
 	private String ram;
 	private String cpu;
+	private Map<String,String> categoryLaptop;
 	
 	public LaptopModel(int maSp, String tenSp, String moTa, int soLuong, String hinh, BigDecimal gia,
 			CategoryProduct loaiSp, String tinhTrang, String trongLuong, String manHinh, String oCung, String vga,
@@ -43,8 +45,27 @@ public class LaptopModel {
 		this.cpu = cpu;
 	}
 	
-	
-	
+	public LaptopModel(int maSp, String tenSp, String moTa, int soLuong, String hinh, BigDecimal gia,
+			CategoryProduct loaiSp, String tinhTrang, String trongLuong, String manHinh, String oCung, String vga,
+			String ram, String cpu, Map<String,String> categoryLaptopModel) {
+		super();
+		this.maSp = maSp;
+		this.tenSp = tenSp;
+		this.moTa = moTa;
+		this.soLuong = soLuong;
+		this.hinh = hinh;
+		this.gia = gia;
+		this.loaiSp = loaiSp;
+		this.tinhTrang = tinhTrang;
+		this.trongLuong = trongLuong;
+		this.manHinh = manHinh;
+		this.oCung = oCung;
+		this.vga = vga;
+		this.ram = ram;
+		this.cpu = cpu;
+		this.categoryLaptop = categoryLaptopModel;
+	}
+
 	public LaptopModel() {
 	}
 
@@ -64,8 +85,17 @@ public class LaptopModel {
 		this.vga = laptopEntity.getVga();
 		this.ram = laptopEntity.getRam();
 		this.cpu = laptopEntity.getCpu();
+		this.categoryLaptop = laptopEntity.getLoaiMayEntity().covertToJson();
 	}
 
+	public Map<String,String> getCategoryLaptop() {
+		return categoryLaptop;
+	}
+
+	public void setCategoryLaptop(Map<String,String> categoryLaptopModel) {
+		this.categoryLaptop = categoryLaptopModel;
+	}
+	
 	public int getMaSp() {
 		return maSp;
 	}

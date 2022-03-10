@@ -23,8 +23,8 @@ public class LaptopRecourse {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<LaptopModel> getAllLaptop(){
-		List<LaptopModel> laptopModels = laptopService.getAllLaptop();
-		return laptopModels;
+		List<LaptopModel> data = laptopService.getAllLaptop();
+		return data;
 	}
 	
 	

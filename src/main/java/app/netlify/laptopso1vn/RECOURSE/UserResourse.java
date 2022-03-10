@@ -31,8 +31,8 @@ public class UserResourse {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<UserModel> getUsers() {
-		List<UserModel> userModelList = userService.getUsers();
-		return userModelList;
+		List<UserModel> data = userService.getUsers();
+		return data;
 	}
 	
 	@POST
@@ -40,8 +40,8 @@ public class UserResourse {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public UserModel getUser(@Valid  FormLogin  formLogin) throws LoginException {
-		UserModel userModel = userService.getUserFromLogin(formLogin);
-		return userModel;
+		UserModel data = userService.getUserFromLogin(formLogin);
+		return data;
 		
 	}
 	
@@ -50,24 +50,24 @@ public class UserResourse {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public UserModel postUser(@Valid  FormRegister formRegister) throws ExistEmailException, ExistUsernameException, PasswordException {
-		UserModel userModel = userService.postUserRegister(formRegister);
-		return userModel;
+		UserModel data = userService.postUserRegister(formRegister);
+		return data;
 	}
 	
 	@GET
 	@Path("checkUsername/{username}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public boolean checkExistByUsername(@PathParam(value = "username") String username) {
-		boolean flagUsername = userService.checkExistByUsername(username);
-		return flagUsername;
+		boolean data = userService.checkExistByUsername(username);
+		return data;
 	}
 	
 	@GET
 	@Path("checkEmail/{email}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public boolean checkExistByEmail(@PathParam(value = "email") String email) {
-		boolean flagEmail = userService.checkExistByEmail(email);
-		return flagEmail;
+		boolean data = userService.checkExistByEmail(email);
+		return data;
 	}
 	
 	

@@ -21,9 +21,8 @@ public class OrderRecourse {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<OrderModel> getOrders(){
-		List<OrderModel> orderModels = orderService.getOrders();
-		System.out.println(orderModels);
-		return orderModels;
+		List<OrderModel> data = orderService.getOrders();
+		return data;
 		
 	}
 	

@@ -1,6 +1,8 @@
 package app.netlify.laptopso1vn.SERVICE;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import app.netlify.laptopso1vn.DAO.LaptopDao;
@@ -25,5 +27,8 @@ public class LaptopService {
 		return laptopModels;
 	}
 	
+	public static void main(String[] args) {
+		LaptopService laptopService = new LaptopService();
+	}
 	
 }
