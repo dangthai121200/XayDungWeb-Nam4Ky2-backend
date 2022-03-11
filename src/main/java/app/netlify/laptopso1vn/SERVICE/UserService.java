@@ -36,13 +36,18 @@ public class UserService {
 	}
 	
 	public UserModel getUserFromLogin(FormLogin formLogin) throws LoginException {
-		KhachHangEntity userEntity = userDao.getUserFromLogin(formLogin);
-		if(userEntity != null) {
-			UserModel userModel = new UserModel(userEntity);
-			return userModel;
+		if(formLogin != null) {
+			KhachHangEntity userEntity = userDao.getUserFromLogin(formLogin);
+			if(userEntity != null) {
+				UserModel userModel = new UserModel(userEntity);
+				return userModel;
+			}else {
+				throw new LoginException();
+			}
 		}else {
 			throw new LoginException();
 		}
+		
 	}
 
 
