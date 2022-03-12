@@ -8,9 +8,10 @@
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
               <!-- Sample MySQL URL provided  -->  
-        <property name="connection.url">jdbc:mysql://localhost:3306/atproject</property>
-        <property name="connection.username">root</property>
- 		<property name="connection.password">Thai0913442325.</property>
+        <property name="connection.url">mysql://b05048ddeb3e63:4072cfd7@us-cdbr-east-05.cleardb.net/heroku_912d242ae534c7a?reconnect=true</property>
+       
+        <!-- <property name="connection.username">root</property>
+ 		<property name="connection.password">Thai0913442325.</property> -->  
            
         <!-- Show SQL on console -->
         <property name="show_sql">true</property>
