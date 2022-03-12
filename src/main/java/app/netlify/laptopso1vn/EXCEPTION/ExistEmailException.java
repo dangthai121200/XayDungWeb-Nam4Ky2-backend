@@ -12,7 +12,7 @@ public class ExistEmailException extends Exception {
 
 	@Override
 	public String getMessage() {
-		return "Email is exits";
+		return "Email tồn tại";
 	}
 
 }

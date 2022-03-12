@@ -12,7 +12,7 @@ public class PasswordException extends Exception {
 
 	@Override
 	public String getMessage() {
-		return "Password is different";
+		return "Mật khẩu không giống nhau";
 	}
 	
 	

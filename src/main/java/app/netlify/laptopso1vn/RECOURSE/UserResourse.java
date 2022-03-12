@@ -10,6 +10,10 @@ import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.FORM.FormRegister;
 import app.netlify.laptopso1vn.MODEL.UserModel;
 import app.netlify.laptopso1vn.SERVICE.UserService;
+import app.netlify.laptopso1vn.UTIL.Laptopso1vnUtil;
+
+import javax.annotation.security.DenyAll;
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -27,9 +31,11 @@ public class UserResourse {
 	public UserResourse() {
 		this.userService = new UserService();
 	}
+
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@RolesAllowed(Laptopso1vnUtil.ADMIN_ROLE)
 	public List<UserModel> getUsers() {
 		List<UserModel> data = userService.getUsers();
 		return data;

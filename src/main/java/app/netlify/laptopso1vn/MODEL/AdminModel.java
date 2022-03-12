@@ -1,48 +1,32 @@
-package app.netlify.laptopso1vn.ENTITY;
+package app.netlify.laptopso1vn.MODEL;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import app.netlify.laptopso1vn.ENTITY.AdminEntity;
 
-
-@Entity(name = "AdminEntity")
-@Table(name = "admin")
-public class AdminEntity {
+public class AdminModel {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "maad")
+
 	private String maad;
-	
-	@Column(name = "ho")
 	private String ho;
-	
-	@Column(name = "ten")
 	private String ten;
-	
-	@Column(name = "diachi")
 	private String diachi;
-	
-	@Column(name = "sdt")
 	private String sdt;
-	
-	@Column(name = "email")
 	private String email;
-	
-	@Column(name = "username")
 	private String username;
 	
-	@Column(name = "password")
-	private String password;
+	public AdminModel() {
+	}
 	
-	public AdminEntity() {
+	public AdminModel(AdminEntity adminEntity) {
+		this.maad = adminEntity.getMaad();
+		this.ho = adminEntity.getHo();
+		this.ten = adminEntity.getTen();
+		this.diachi = adminEntity.getDiachi();
+		this.sdt = adminEntity.getSdt();
+		this.email = adminEntity.getEmail();
+		this.username = adminEntity.getUsername();
 	}
 
-	public AdminEntity(String maad, String ho, String ten, String diachi, String sdt, String email, String username,
-			String password) {
+	public AdminModel(String maad, String ho, String ten, String diachi, String sdt, String email, String username) {
 		super();
 		this.maad = maad;
 		this.ho = ho;
@@ -51,13 +35,11 @@ public class AdminEntity {
 		this.sdt = sdt;
 		this.email = email;
 		this.username = username;
-		this.password = password;
 	}
 	
 	
 
-	public AdminEntity(String ho, String ten, String diachi, String sdt, String email, String username,
-			String password) {
+	public AdminModel(String ho, String ten, String diachi, String sdt, String email, String username) {
 		super();
 		this.ho = ho;
 		this.ten = ten;
@@ -65,7 +47,6 @@ public class AdminEntity {
 		this.sdt = sdt;
 		this.email = email;
 		this.username = username;
-		this.password = password;
 	}
 
 
@@ -125,16 +106,6 @@ public class AdminEntity {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 	
-	
-	
-
 }
+

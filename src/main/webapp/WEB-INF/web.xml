@@ -7,23 +7,41 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<servlet>
 		<servlet-name>Jersey Web Application</servlet-name>
-		<servlet-class>org.glassfish.jersey.servlet.ServletContainer
+		
+		<servlet-class>
+			org.glassfish.jersey.servlet.ServletContainer
 		</servlet-class>
+		
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
 			<param-value>app.netlify.laptopso1vn</param-value>
 		</init-param>
+		
 		<init-param>
 			<param-name>
 				jersey.config.beanValidation.enableOutputValidationErrorEntity.server
 			</param-name>
 			<param-value>true</param-value>
 		</init-param>
+		
 		<init-param>
-			<param-name>com.sun.jersey.spi.container.ContainerResponseFilters
+			<param-name>
+				org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature
 			</param-name>
-			<param-value>com.yourpackage.CORSFilter</param-value>
+			<param-value>true</param-value>
 		</init-param>
+		
+		 <init-param>
+            <param-name>jersey.config.server.provider.classnames</param-name>
+            <param-value>org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>app.netlify</param-value>
+        </init-param>
+
+
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
@@ -43,10 +61,22 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-
-	<!--<security-constraint> <web-resource-collection> <url-pattern>/rest/orders/*</url-pattern> 
-		</web-resource-collection> <auth-constraint> <role-name>customer</role-name> 
-		</auth-constraint> </security-constraint> <login-config> <auth-method>BASIC</auth-method> 
-		<realm-name>my-default-realm</realm-name> </login-config> -->
+	
+<!--
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/v1/user</url-pattern>
+		</web-resource-collection>
+		<http-method>GET</http-method> 
+		<auth-constraint>
+			<role-name>User</role-name>
+		</auth-constraint>
+		
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>my-default-realm</realm-name>
+	</login-config>-->
 
 </web-app>

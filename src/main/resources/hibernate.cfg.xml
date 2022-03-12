@@ -2,36 +2,34 @@
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
- 
-        <!-- Connection settings -->
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-              <!-- Sample MySQL URL provided  -->  
-              
-        <property name="connection.url"> jdbc:mysql://us-cdbr-east-05.cleardb.net/heroku_912d242ae534c7a?reconnect=true</property>
-        <property name="connection.username">b05048ddeb3e63</property>
- 		<property name="connection.password">4072cfd7</property>
-           
-        <!-- Show SQL on console -->
-        <property name="show_sql">true</property>
- 
+	<session-factory>
+
+		<!-- Connection settings -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- Sample MySQL URL provided -->
+
+		<property name="connection.url">
+			jdbc:mysql://us-cdbr-east-05.cleardb.net/heroku_912d242ae534c7a?reconnect=true</property>
+		<property name="connection.username">b05048ddeb3e63</property>
+		<property name="connection.password">4072cfd7</property>
+
+		<!-- Show SQL on console -->
+		<property name="show_sql">true</property>
+
 		<!--Setting Session context model -->
 		<property name="current_session_context_class">thread</property>
-		
-		  <!-- 
-		  auto add
-		  <property name="hibernate.hbm2ddl.auto">update</property>
-		  -->
-		 <!-- 
-		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-		  -->
-		
-		<property name="hibernate.show_sql">true</property>
-		
-	 <!--Mapping file entity -->
-		<mapping class="app.netlify.laptopso1vn.ENTITY.LoaiMayEntity"/>
-		<mapping class="app.netlify.laptopso1vn.ENTITY.LaptopEntity"/>
- 
-    </session-factory>
+
+		<!-- auto add <property name="hibernate.hbm2ddl.auto">update</property> -->
+		<!-- <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property> -->
+
+		<property name="show_sql">true</property>
+		<!--<property name="format_sql">true</property>
+		<property name="use_sql_comments">true</property>-->
+
+		<!--Mapping file entity -->
+		<mapping class="app.netlify.laptopso1vn.ENTITY.LoaiMayEntity" />
+		<mapping class="app.netlify.laptopso1vn.ENTITY.LaptopEntity" />
+
+	</session-factory>
 </hibernate-configuration>

@@ -5,11 +5,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import app.netlify.laptopso1vn.UTIL.Laptopso1vnUtil;
+
 @Path("/")
 @Produces(MediaType.TEXT_PLAIN + ";charset=utf-8")
 public class MainRecourse {
 	
 	@GET
+
 	public String main() {
 		return "Chào mừng bạn đến với laptopso1vn";
 	}

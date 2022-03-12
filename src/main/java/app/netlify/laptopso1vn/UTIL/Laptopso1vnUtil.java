@@ -11,5 +11,8 @@ public class Laptopso1vnUtil {
 
 	public static final String MESSAGE_NOT_NULL = "Vui lòng không để trống";
 	public static final String MESSAGE_NOT_EMPTY = "Vui lòng không để trống";
+	
+	public static final String USER_ROLE="User";
+	public static final String ADMIN_ROLE="Admin";
 
 }

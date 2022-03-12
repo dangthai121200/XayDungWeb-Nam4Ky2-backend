@@ -1,7 +1,11 @@
 package app.netlify.laptopso1vn.MODEL;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import app.netlify.laptopso1vn.ENTITY.KhachHangEntity;
+import app.netlify.laptopso1vn.UTIL.Laptopso1vnUtil;
 
 public class UserModel {
 
@@ -12,6 +16,8 @@ public class UserModel {
 	private String diachi;
 	private String email;
 	private String sdt;
+	private String username;
+	private List<String> roles = new ArrayList<String>();
 	
 	public UserModel(KhachHangEntity userEntity) {
 		this.makh = userEntity.getMakh();
@@ -20,6 +26,8 @@ public class UserModel {
 		this.diachi = userEntity.getDiachi();
 		this.email = userEntity.getEmail();
 		this.sdt = userEntity.getSdt();
+		this.username = userEntity.getUsername();
+		roles.add(Laptopso1vnUtil.ADMIN_ROLE);
 	}
 	
 	public UserModel(int makh, String ho, String ten, String diachi, String email, String sdt) {
@@ -30,6 +38,22 @@ public class UserModel {
 		this.diachi = diachi;
 		this.email = email;
 		this.sdt = sdt;
+	}
+	
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public int getMakh() {
