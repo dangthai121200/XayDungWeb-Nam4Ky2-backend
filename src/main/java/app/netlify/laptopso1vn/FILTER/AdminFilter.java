@@ -21,7 +21,6 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.ext.Provider;
 
 import app.netlify.laptopso1vn.EXCEPTION.LoginException;
-import app.netlify.laptopso1vn.EXCEPTION.NotAllowException;
 import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.MODEL.AdminModel;
 import app.netlify.laptopso1vn.MODEL.UserModel;
