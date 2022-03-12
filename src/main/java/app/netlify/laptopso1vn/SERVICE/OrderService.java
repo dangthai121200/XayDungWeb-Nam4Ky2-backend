@@ -16,7 +16,6 @@ public class OrderService {
 		orderDao = new OrderDao();
 	}
 
-
 	public List<OrderModel> getOrders() {
 		List<DonHangEntity> donHangEntities = orderDao.getOrders();
 		List<OrderModel> orderModels = new ArrayList<OrderModel>();
