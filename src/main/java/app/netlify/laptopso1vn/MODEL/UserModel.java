@@ -17,8 +17,16 @@ public class UserModel {
 	private String email;
 	private String sdt;
 	private String username;
+	private String password;
 	private List<String> roles = new ArrayList<String>();
 	
+	
+	
+	public UserModel() {
+	}
+
+
+
 	public UserModel(KhachHangEntity userEntity) {
 		this.makh = userEntity.getMakh();
 		this.ho = userEntity.getHo();
@@ -27,19 +35,24 @@ public class UserModel {
 		this.email = userEntity.getEmail();
 		this.sdt = userEntity.getSdt();
 		this.username = userEntity.getUsername();
-		roles.add(Laptopso1vnUtil.ADMIN_ROLE);
+		this.password = userEntity.getPassword();
+		roles.add(Laptopso1vnUtil.USER_ROLE);
 	}
 	
-	public UserModel(int makh, String ho, String ten, String diachi, String email, String sdt) {
-		super();
-		this.makh = makh;
-		this.ho = ho;
-		this.ten = ten;
-		this.diachi = diachi;
-		this.email = email;
-		this.sdt = sdt;
-	}
 	
+	
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
 	public List<String> getRoles() {
 		return roles;
 	}
@@ -91,6 +104,18 @@ public class UserModel {
 	}
 	public void setSdt(String sdt) {
 		this.sdt = sdt;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
 	}
 	
 	

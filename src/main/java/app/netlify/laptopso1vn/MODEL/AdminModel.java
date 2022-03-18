@@ -12,6 +12,7 @@ public class AdminModel {
 	private String sdt;
 	private String email;
 	private String username;
+	private String password;
 	
 	public AdminModel() {
 	}
@@ -24,32 +25,17 @@ public class AdminModel {
 		this.sdt = adminEntity.getSdt();
 		this.email = adminEntity.getEmail();
 		this.username = adminEntity.getUsername();
-	}
-
-	public AdminModel(String maad, String ho, String ten, String diachi, String sdt, String email, String username) {
-		super();
-		this.maad = maad;
-		this.ho = ho;
-		this.ten = ten;
-		this.diachi = diachi;
-		this.sdt = sdt;
-		this.email = email;
-		this.username = username;
+		this.password = adminEntity.getPassword();
 	}
 	
 	
-
-	public AdminModel(String ho, String ten, String diachi, String sdt, String email, String username) {
-		super();
-		this.ho = ho;
-		this.ten = ten;
-		this.diachi = diachi;
-		this.sdt = sdt;
-		this.email = email;
-		this.username = username;
+	public String getPassword() {
+		return password;
 	}
 
-
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public String getMaad() {
 		return maad;

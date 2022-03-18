@@ -7,12 +7,9 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 import javax.annotation.Priority;
-import javax.inject.Singleton;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
-import javax.ws.rs.container.ContainerResponseContext;
-import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
@@ -20,12 +17,9 @@ import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.ext.Provider;
 
-import app.netlify.laptopso1vn.EXCEPTION.LoginException;
-import app.netlify.laptopso1vn.FORM.FormLogin;
 import app.netlify.laptopso1vn.MODEL.AdminModel;
-import app.netlify.laptopso1vn.MODEL.UserModel;
 import app.netlify.laptopso1vn.SERVICE.AdminService;
-import app.netlify.laptopso1vn.SERVICE.UserService;
+
 
 
 
@@ -76,8 +70,6 @@ public class AdminFilter implements ContainerRequestFilter{
 	        SecurityContext oldContext = requestContext.getSecurityContext();
 	        requestContext.setSecurityContext(new AdminSecurityContext(oldContext.isSecure()));
 		}
-		
-		 
     }
 }
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.NoResultException;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -64,7 +65,7 @@ public class UserDao {
 			}
 			KhachHangEntity khachHangEntity = new KhachHangEntity(formRegister.getEmail(), 
 					formRegister.getUsername(), 
-					formRegister.getPassword());
+					DigestUtils.md5Hex(formRegister.getPassword()));
 			session.save(khachHangEntity);
 			session.getTransaction().commit();
 			return khachHangEntity;
