@@ -12,7 +12,6 @@ import app.netlify.laptopso1vn.UTIL.Laptopso1vnUtil;
 public class MainRecourse {
 	
 	@GET
-
 	public String main() {
 		return "Chào mừng bạn đến với laptopso1vn";
 	}

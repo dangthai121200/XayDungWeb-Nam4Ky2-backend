@@ -33,7 +33,9 @@ public class AdminFilter implements ContainerRequestFilter{
 	@Override
 	public void filter(ContainerRequestContext requestContext) throws IOException {
 		
-		if(uriInfo.getPath().contains("v1/users")) {
+		if(uriInfo.getPath().contains("v1/users")
+				|| uriInfo.getPath().contains("v1/orders")
+				) {
 			
 			// (1) Parsing the Basic Auth Authorization header
 	        // The structure of authentication header:

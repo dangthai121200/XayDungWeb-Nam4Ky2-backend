@@ -36,7 +36,7 @@ public class UserDao {
 				session.beginTransaction();
 			}
 			String SQL = "FROM UserEntity WHERE username = '" + formLogin.getUsername() + "'" + " AND password = '" 
-			+ formLogin.getPassword() +"'";
+			+ DigestUtils.md5Hex(formLogin.getPassword()) +"'";
 			khachHangEntity  = session.createQuery(SQL, KhachHangEntity.class)
 					.getSingleResult();
 			return khachHangEntity;
