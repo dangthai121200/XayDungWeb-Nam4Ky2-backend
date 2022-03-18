@@ -1,6 +1,10 @@
 package app.netlify.laptopso1vn.MODEL;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import app.netlify.laptopso1vn.ENTITY.AdminEntity;
+import app.netlify.laptopso1vn.UTIL.Laptopso1vnUtil;
 
 public class AdminModel {
 	
@@ -13,6 +17,7 @@ public class AdminModel {
 	private String email;
 	private String username;
 	private String password;
+	private List<String> roles = new ArrayList<String>();
 	
 	public AdminModel() {
 	}
@@ -26,9 +31,20 @@ public class AdminModel {
 		this.email = adminEntity.getEmail();
 		this.username = adminEntity.getUsername();
 		this.password = adminEntity.getPassword();
+		roles.add(Laptopso1vnUtil.ADMIN_ROLE);
 	}
 	
 	
+	
+	
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+
 	public String getPassword() {
 		return password;
 	}
