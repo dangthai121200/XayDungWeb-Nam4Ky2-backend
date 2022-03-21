@@ -9,7 +9,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class Test {
 
 	public static void main(String[] args) throws NoSuchAlgorithmException {
-		String Url = "your_url";
+		String Url = "Thai0913442325.";
 
 		System.out.println( DigestUtils.md5Hex( Url ) );
 	}

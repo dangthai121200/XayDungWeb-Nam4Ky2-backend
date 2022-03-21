@@ -17,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import app.netlify.laptopso1vn.COVERENUM.CategoryProductCovert;
 import app.netlify.laptopso1vn.ENUM.CategoryProduct;
 
 @Table(name = "laptop")
@@ -248,29 +249,4 @@ public class LaptopEntity implements Serializable {
 
 	
 
-}
-
-@Converter
-class CategoryProductCovert implements AttributeConverter<CategoryProduct, String>{
-
-	@Override
-	public String convertToDatabaseColumn(CategoryProduct categoryProduct) {
-		if(categoryProduct == CategoryProduct.ACCESSORY) {
-			return categoryProduct.getTile();
-		}else if(categoryProduct == CategoryProduct.LAPTOP) {
-			return categoryProduct.getTile();
-		}
-		return null;
-	}
-
-	@Override
-	public CategoryProduct convertToEntityAttribute(String categoryProduct) {
-		if(categoryProduct.equals(CategoryProduct.ACCESSORY.getTile())) {
-			return CategoryProduct.ACCESSORY;
-		}else if(categoryProduct.equals(CategoryProduct.LAPTOP.getTile())) {
-			return CategoryProduct.LAPTOP;
-		}
-		return null;
-	}
-	
 }
